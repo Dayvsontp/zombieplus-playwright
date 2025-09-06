@@ -1,9 +1,9 @@
 const { test: base, expect } = require('@playwright/test')
 
-import { Loginpage } from '../pages/Loginpage';
-import { Alert, Toast } from '../pages/Components';
+const { Loginpage } = require('../pages/Loginpage');
+const { Alert, Toast } = require ('../pages/Components');
 const { Moviespage } = require('../pages/Moviespage');
-import { Landingpage } from '../pages/Landingpage';
+const { Landingpage } = require('../pages/Landingpage');
 
 
 const test = base.extend({
