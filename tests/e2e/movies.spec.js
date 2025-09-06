@@ -1,43 +1,23 @@
-import {  test } from '../support/';
+const { test } = require('../support/');
 
 const data = require('../support/fixtures/movies.json')
-const { executeSQL } = require('../support/database');   
-import { Loginpage } from '../pages/Loginpage';
-import { Alert } from '../pages/Components';
-import { Toast } from '../pages/Components';
-import { Moviespage } from '../pages/Moviespage';
-import { create } from 'domain';
-
-let loginpage
-let alerta
-let toast
-let movies
+const { executeSQL } = require('../support/database');
 
 
-test.beforeEach(async ({page}) => {
+test('deve cadastrar um novo filme', async ({ page }) => {
 
-    loginpage = new Loginpage(page)
-    alerta = new Alert(page)
-    toast = new Toast(page)
-    movies = new Moviespage(page)
 
-})
-
-test('deve cadastrar um novo filme', async ({page, request}) =>{
-
-    
-    const movie =  data.create
-
+    const movie = data.create
     await executeSQL(`DELETE FROM public.movies WHERE title = '${movie.title}';`)
 
 
-    await loginpage.visit()
-    await loginpage.submit('admin@zombieplus.com', 'pwd123')
-    await loginpage.areaLogada()
+    await page.login.visit()
+    await page.login.submit('admin@zombieplus.com', 'pwd123')
+    await page.login.areaLogada()
 
-    await movies.create(movie.title, movie.overview, movie.company, movie.release_year)
+    await page.movies.create(movie.title, movie.overview, movie.company, movie.release_year)
 
-    await toast.containText('Cadastro realizado com sucesso!')
+    await page.toast.containText('Cadastro realizado com sucesso!')
 
-    
+
 })
