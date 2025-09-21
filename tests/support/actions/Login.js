@@ -1,9 +1,16 @@
 
 import { expect } from '@playwright/test';
-export class Loginpage {
+export class Login {
 
     constructor(page) {
         this.page = page
+    }
+
+    async do(email, senha, username){
+
+        await this.visit()
+        await this.submit(email, senha)
+        await this.areaLogada(username)
     }
 
     async visit() {
@@ -24,10 +31,12 @@ export class Loginpage {
 
     }
 
-    async areaLogada(){
+    async areaLogada(username){
 
-        await this.page.waitForLoadState('networkidle')
-        await expect(this.page).toHaveURL(/.*admin/)
+        const logado = await this.page.locator('.logged-user')
+        await expect(logado).toHaveText(`Olá, ${username}`)
+        // await this.page.waitForLoadState('networkidle')
+        // await expect(this.page).toHaveURL(/.*admin/)
     }
 
 
