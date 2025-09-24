@@ -6,21 +6,21 @@ export class Movies {
         this.page = page
     }
 
-    async goForm(){
+    async goForm() {
         await this.page.locator('a[href$=register]').click()
     }
-    async submit(){
+    async submit() {
         //acha o elemento pelo nome
-        await this.page.getByRole('button', {name: 'Cadastrar'}).click()
+        await this.page.getByRole('button', { name: 'Cadastrar' }).click()
     }
 
     async create(movie) {
 
         await this.goForm()
-            //pega pelo nome de cima do campo, se houver label no html
+        //pega pelo nome de cima do campo, se houver label no html
         await this.page.getByLabel('Titulo do filme').fill(movie.title)
         await this.page.getByLabel('Sinopse').fill(movie.overview)
-            //pega pelo cssSelector, no caso abaixo combinando o ID(Pai) com a classe do filho
+        //pega pelo cssSelector, no caso abaixo combinando o ID(Pai) com a classe do filho
         await this.page.locator('#select_company_id .react-select__indicator').click()
         await this.page.locator('.react-select__option')
             .filter({ hasText: movie.company })
@@ -30,14 +30,22 @@ export class Movies {
         await this.page.locator('.react-select__option')
             .filter({ hasText: movie.release_year })
             .click()
-        
-        await this.page.locator('input[type="file"]').setInputFiles('tests/support/fixtures'  + movie.cover)
 
-        if (movie.featured){
+        await this.page.locator('input[type="file"]').setInputFiles('tests/support/fixtures' + movie.cover)
+
+        if (movie.featured) {
             await this.page.locator('.featured .react-switch').click()
         }
-        await this.submit()       
+        await this.submit()
 
     }
 
+    async delete(movie) {
+
+        await this.page.getByRole('row', { name: movie }).getByRole('button').click()
+        await this.page.click('.confirm-removal')
+        await this.page.popup.containText('#swal2-html-container',
+            "Filme removido com sucesso.")
+
+    }
 }

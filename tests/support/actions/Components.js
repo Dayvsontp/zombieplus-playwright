@@ -39,3 +39,17 @@ export class Alert {
     }
 
 }
+
+export class Popup {
+
+    constructor(page) {
+        this.page = page
+    }
+
+    async containText(loc, textPopup) {
+
+        await expect(this.page.locator(loc)).toContainText(textPopup)
+
+    }
+
+}

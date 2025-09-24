@@ -1,8 +1,11 @@
 
 const { test, expect } = require('../support/');
-
+const { executeSQL } = require('../support/database');
 const { faker } = require('@faker-js/faker');
 
+test.beforeAll(async () => {
+  await executeSQL('DELETE FROM public.leads;')
+})
 
 test('deve cadastrar um lead na fila de espera', async ({ page }) => {
 
@@ -12,8 +15,8 @@ test('deve cadastrar um lead na fila de espera', async ({ page }) => {
   await page.leads.visit()
   await page.leads.openLeadModal()
   await page.leads.submitLeadForm(leadName, leadEmail)
-  await page.toast.containText(
-    "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!")
+  await page.popup.containText('#swal2-html-container',
+    "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato.")
 });
 
 test('não deve cadastrar quando um email já existe', async ({ page, request }) => {
@@ -33,8 +36,8 @@ test('não deve cadastrar quando um email já existe', async ({ page, request })
   await page.leads.visit()
   await page.leads.openLeadModal()
   await page.leads.submitLeadForm(leadName, leadEmail)
-  await page.toast.containText(
-    "O endereço de e-mail fornecido já está registrado em nossa fila de espera.")
+  await page.popup.containText('#swal2-html-container',
+    "Verificamos que o endereço de e-mail fornecido já consta em nossa lista de espera. Isso significa que você está um passo mais perto de aproveitar nossos serviços.")
 });
 
 test('deve cadastrar um email incorreto', async ({ page }) => {

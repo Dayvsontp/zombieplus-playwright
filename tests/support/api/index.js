@@ -19,7 +19,7 @@ export class API {
         expect(response.ok()).toBeTruthy()
         const body = JSON.parse(await response.text())
         this.token = 'Bearer ' + body.token
-        console.log(this.token)
+        // console.log(this.token)
 
     }
 

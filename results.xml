@@ -1,0 +1,120 @@
+<testsuites id="" name="" tests="16" failures="0" skipped="0" errors="0" time="11.044319999999999">
+<testsuite name="e2e\leads.spec.js" timestamp="2025-09-24T02:45:23.635Z" hostname="chromium" tests="6" failures="0" skipped="0" time="13.011" errors="0">
+<testcase name="deve cadastrar um lead na fila de espera" classname="e2e\leads.spec.js" time="2.429">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-leads-deve-cadastrar-um-lead-na-fila-de-espera-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve cadastrar quando um email já existe" classname="e2e\leads.spec.js" time="2.392">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-leads-não-deve-cadastrar-quando-um-email-já-existe-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="deve cadastrar um email incorreto" classname="e2e\leads.spec.js" time="2.142">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-leads-deve-cadastrar-um-email-incorreto-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve cadastrar quando o nome não é preenchido" classname="e2e\leads.spec.js" time="1.872">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-leads-não-deve-cadastrar-quando-o-nome-não-é-preenchido-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve cadastrar quando o email não é preenchido" classname="e2e\leads.spec.js" time="2.118">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-leads-não-deve-cadastrar-quando-o-email-não-é-preenchido-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve cadastrar quando nenhum campo é preenchido" classname="e2e\leads.spec.js" time="2.058">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-leads-não-deve-cadastr-9db9f-o-nenhum-campo-é-preenchido-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\login.spec.js" timestamp="2025-09-24T02:45:23.635Z" hostname="chromium" tests="6" failures="0" skipped="0" time="9.847" errors="0">
+<testcase name="deve logar como administrador" classname="e2e\login.spec.js" time="1.559">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-login-deve-logar-como-administrador-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve logar com senha incorreta" classname="e2e\login.spec.js" time="2.335">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-login-não-deve-logar-com-senha-incorreta-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve logar com email incorreto" classname="e2e\login.spec.js" time="1.811">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-login-não-deve-logar-com-email-incorreto-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve logar sem email" classname="e2e\login.spec.js" time="1.391">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-login-não-deve-logar-sem-email-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve logar sem a senha" classname="e2e\login.spec.js" time="1.385">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-login-não-deve-logar-sem-a-senha-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve logar sem o email e senha" classname="e2e\login.spec.js" time="1.366">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-login-não-deve-logar-sem-o-email-e-senha-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\movies.spec.js" timestamp="2025-09-24T02:45:23.635Z" hostname="chromium" tests="4" failures="0" skipped="0" time="11.033" errors="0">
+<testcase name="deve cadastrar um novo filme" classname="e2e\movies.spec.js" time="3.141">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-movies-deve-cadastrar-um-novo-filme-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="deve remover um filme" classname="e2e\movies.spec.js" time="2.609">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-movies-deve-remover-um-filme-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve cadastrar quando o titulo for duplicado" classname="e2e\movies.spec.js" time="2.838">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-movies-não-deve-cadastrar-quando-o-titulo-for-duplicado-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="não deve cadastrar um novo filme sem preencher os campos obrigatorios" classname="e2e\movies.spec.js" time="2.445">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-movies-não-deve-cadast-11a5c-cher-os-campos-obrigatorios-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
